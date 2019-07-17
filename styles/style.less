@@ -45,6 +45,7 @@ src: local('Arial - Italic MT'), url('../fonts/ArialMT/arial-mt-std-italic-586c3
 @fontPrimary: 'Arial MT', sans-serif;
 @fontPrimaryItalic: 'Arial - Italic MT', sans-serif;
 @fontPrimaryBold: 'Arial - Bold MT', sans-serif;
+@fontIcons: 'Socialico';
 
 * {
     margin: 0;
@@ -139,6 +140,11 @@ footer {
         background-color: @colorPrimary;
         color: @colorWhite;
         min-height: 509px;
+        
+        p {
+            font: 60px @fontIcons;
+            
+        }
     }
     
     .copyright {

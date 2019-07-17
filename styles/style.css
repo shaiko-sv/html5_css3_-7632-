@@ -97,6 +97,9 @@ footer .contacts {
   color: #ffffff;
   min-height: 509px;
 }
+footer .contacts p {
+  font: 60px 'Socialico';
+}
 footer .copyright {
   color: #445162;
   text-align: center;
