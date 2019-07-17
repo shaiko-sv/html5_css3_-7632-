@@ -1,0 +1,150 @@
+/* font: [font-style||font-variant||font-weight] font-size [/line-height] font-family | inherit */
+
+@font-face {
+    font-family: Socialico; /* Имя шрифта */
+    src: url('../fonts/Socialico/Socialico-Regular.woff2'); /* Путь к файлу со шрифтом */
+   }
+
+@font-face {
+font-family: 'Arial MT';
+font-style: normal;
+font-weight: normal;
+src: local('Arial MT'), url('../fonts/ArialMT/arial-mt-std-light-586c341645fe0.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Arial - Bold MT';
+font-style: normal;
+font-weight: normal;
+src: local('Arial - Bold MT'), url('../fonts/ArialMT/arial-mt-std-cond-586c3568cef79.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Arial - Italic MT';
+font-style: normal;
+font-weight: normal;
+src: local('Arial - Italic MT'), url('../fonts/ArialMT/arial-mt-std-italic-586c358cbc0a5.woff') format('woff');
+}
+
+@outlineTest: 1px dotted #999;
+
+@widthMain: 1280px;
+
+@paddingMain: 50px;
+@margingMain: @paddingMain;
+
+@colorPrimary: #445161;
+@colorSecondary: #f5f5f5;
+@colorSuccess: #ebebeb;
+@colorInfo: #333;
+@colorLight: #f5f5f6;
+@colorDark: #445162;
+@colorWhite: #fff;
+
+
+@fontPrimary: 'Arial MT', sans-serif;
+@fontPrimaryItalic: 'Arial - Italic MT', sans-serif;
+@fontPrimaryBold: 'Arial - Bold MT', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: @outlineTest;
+}
+
+html,
+body {
+    font-family: @fontPrimary;
+}
+
+.clearFix {
+    clear: both;
+}
+
+main {
+    width: @widthMain;
+    margin: 0 auto;
+}
+
+.header {
+    min-height: 323px - @paddingMain * 2;
+    padding: @paddingMain;
+    background-color: @colorPrimary;
+    color: @colorWhite;
+    
+    .col {
+        width: (@widthMain - @paddingMain * 2) / 2;
+        float: left;
+    }
+    
+    .col1 {
+        .productName {
+            font: 400 60px/44px @fontPrimary;
+        }
+    
+        ul {
+            margin-top: @margingMain;
+            margin-left: 36px;
+            min-width: 430px;
+            font: 400 20px/15px @fontPrimary;
+            list-style-image: url('../images/check_icon.png');
+        
+            li:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .col2 {
+        img {
+            float: right;
+        }
+    }
+}
+
+.about {
+    color: @colorPrimary;
+    min-height: 345px;
+    
+}
+
+.pluses {
+    background-color: @colorSecondary;
+    color: @colorPrimary;
+    min-height: 317px + @margingMain * 2;
+}
+
+.screenhots {
+    color: @colorPrimary;
+    min-height: 487px;
+}
+
+.reviews {
+    background-color: @colorSecondary;
+    color: @colorPrimary;
+    min-height: 424px;
+}
+
+.buyItNow {
+    color: @colorPrimary;
+    min-height: 656px;
+}
+
+
+footer {
+    width: @widthMain;
+    margin: 0 auto;
+ 
+    .contacts {
+        background-color: @colorPrimary;
+        color: @colorWhite;
+        min-height: 509px;
+    }
+    
+    .copyright {
+        color: @colorDark;
+        text-align: center;
+        font: 400 12px/26px 'Arial MT';
+        letter-spacing: 0.3px;
+    }
+}
