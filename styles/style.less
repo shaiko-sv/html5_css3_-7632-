@@ -24,12 +24,14 @@ src: local('Arial'), url('../fonts/arial.ttf') format('ttf');
 @marginP: 20px;
 @marginArticle: 35px;
 @marginColPluses: 23px;
+@marginsPShots: 15px;
+@marginBuyItNow: 45px;
 
 @colorPrimary: #445161;
 @colorSecondary: #f5f5f5;
 @colorSuccess: #ebebeb;
 @colorInfo: #333;
-@colorLight: #f5f5f6;
+@colorLight: #989898;
 @colorDark: #445162;
 @colorWhite: #fff;
 
@@ -58,7 +60,7 @@ body {
 
 .colorPrimaryWhite {
     background-color: @colorPrimary;
-        color: @colorWhite;
+    color: @colorWhite;
 }
 
 .colorSecondaryPrimary {
@@ -181,25 +183,170 @@ main {
             width: 526px;
             color: @colorInfo;
             font: 400 16px/22px @fontPrimary;
+            letter-spacing: -.1px;
         }
     }
 }
 
 .screenhots {
     color: @colorPrimary;
-    min-height: 487px;
+    min-height: 400px;
+    padding: @paddingMain;
+    
+    h2 {
+        text-align: center;
+        color: @colorPrimary;
+        font: 400 30px/36px @fontPrimary;
+        margin-bottom: @marginH2 + 5px;
+    }
+    
+    .col1,
+    .col2 {
+        max-width: (@widthMain - @paddingMain * 2) / 2;
+        float: left;
+        overflow: hidden;
+        
+        section {
+            display: flex;
+            margin-bottom: 30px;
+            max-height: 150px;
+            
+            div {
+                float: left;
+                max-width: 359px;
+            }
+            
+            .text {
+                margin: 0 @marginsPShots;
+                
+                h3 {
+                    color: @colorPrimary;
+                    font: 400 24px/24px @fontPrimary;
+                    margin-bottom: @marginsPShots;
+                }
+
+                p {
+                    color: @colorInfo;
+                    font: 400 16px/23px @fontPrimary;
+                    letter-spacing: -.1px;
+                }
+            }    
+        }
+    }
 }
 
 .reviews {
     .colorSecondaryPrimary;
-    min-height: 424px;
+    min-height: 330px;
+    padding: @paddingMain;
+    
+    h2 {
+        text-align: center;
+        color: @colorPrimary;
+        font: 400 30px/36px @fontPrimary;
+        margin-bottom: @marginH2 + 5px;
+    }
+
+    .col1 {
+        margin-right: @marginH2;
+    }
+    
+    .col1,
+    .col2 {
+        max-width: (@widthMain - @paddingMain * 2) / 2;
+        display: grid;
+        float: left;
+        
+        .userPic {
+            border-radius: 50%;
+            background-color: @colorPrimary;
+            width: 75px;
+            height: 75px;
+            float: left;
+            margin-right: @marginsPShots;
+        }
+        
+        .review {
+            background: url(../images/bg_review.png) no-repeat;
+            float: right;
+            max-width: 435px;
+            max-height: 121px;
+            padding: @marginsPShots 20px @marginsPShots 27px;
+            
+            p {
+                color: @colorInfo;
+                font: italic 400 14px/17px @fontPrimary;
+                margin-bottom: @marginsPShots;
+                letter-spacing: -.4px;
+            }
+            
+            .name {
+                color: @colorLight;
+                font: 400 14px/18px @fontPrimary;
+            }
+        }
+    }
+    
 }
 
 .buyItNow {
     color: @colorPrimary;
-    min-height: 656px;
+    padding: @paddingMain (@paddingMain * 3 - 5px);
+    
+    h2 {
+        color: @colorPrimary;
+        font: 400 30px/36px @fontPrimary;
+        text-align: center;
+        margin-bottom: @marginH2;
+    }
+    
+    .col1,
+    .col2,
+    .col3 {
+        background-color: @colorPrimary;
+        width: (@widthMain - (@paddingMain * 3) * 2 - @marginBuyItNow * 2) / 3;
+        vertical-align:bottom; /* вот она */
+        display:inline-block;
+        
+        h3 {
+            text-align: center;
+            color: @colorWhite;
+            font: 400 24px/30px @fontPrimary;
+            padding: @marginsPShots 0;
+        }
+        
+        p {
+            color: @colorDark;
+            background-color: @colorWhite;
+            text-align: center;
+            font: 400 40px/30px @fontPrimary;
+            padding: @marginP - 2px 0;
+        }
+        
+        ol {
+            color: @colorWhite;
+            font: 400 14px/24px @fontPrimary;
+            margin-left: @marginArticle;
+            margin-top: @marginP;
+        }
+        
+        button {
+            text-align: center;
+            color: @colorPrimary;
+            background-color: @colorWhite;
+            font: 800 18px/18px @fontPrimary;
+            text-transform: uppercase;
+            width: 260px;
+            height: 40px;
+            margin: @marginP;
+            border-radius: 7px;
+        }
+    }
+    
+    .col2 {
+        margin: 0 @marginBuyItNow;
+    }
 }
-
 
 footer {
     width: @widthMain;
@@ -208,7 +355,34 @@ footer {
     .contacts {
         .colorPrimaryWhite;
         min-height: 509px;
+        padding: @paddingMain @paddingMain * 5;
         
+        h2 {
+            color: @colorWhite;
+            text-align: center;
+            font: 400 30px/36px @fontPrimary;
+            margin-bottom: @marginH2;  
+        }
+        
+        .col1 {
+            max-width: 495px;
+            margin-right: @marginBuyItNow;
+            
+            input {
+                display: block;
+            }
+        }
+        
+        .col2 {
+            max-width: 235px;
+        }
+        
+        .col1,
+        .col2 {
+        vertical-align: top; /* вот она */
+        display:inline-block;
+            
+        }
         p {
             font: 60px @fontIcons;
             

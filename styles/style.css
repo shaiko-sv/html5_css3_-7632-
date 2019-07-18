@@ -129,19 +129,161 @@ main {
   width: 526px;
   color: #333333;
   font: 400 16px/22px 'Arial', sans-serif;
+  letter-spacing: -0.1px;
 }
 .screenhots {
   color: #445161;
-  min-height: 487px;
+  min-height: 400px;
+  padding: 50px;
+}
+.screenhots h2 {
+  text-align: center;
+  color: #445161;
+  font: 400 30px/36px 'Arial', sans-serif;
+  margin-bottom: 35px;
+}
+.screenhots .col1,
+.screenhots .col2 {
+  max-width: 590px;
+  float: left;
+  overflow: hidden;
+}
+.screenhots .col1 section,
+.screenhots .col2 section {
+  display: flex;
+  margin-bottom: 30px;
+  max-height: 150px;
+}
+.screenhots .col1 section div,
+.screenhots .col2 section div {
+  float: left;
+  max-width: 359px;
+}
+.screenhots .col1 section .text,
+.screenhots .col2 section .text {
+  margin: 0 15px;
+}
+.screenhots .col1 section .text h3,
+.screenhots .col2 section .text h3 {
+  color: #445161;
+  font: 400 24px/24px 'Arial', sans-serif;
+  margin-bottom: 15px;
+}
+.screenhots .col1 section .text p,
+.screenhots .col2 section .text p {
+  color: #333333;
+  font: 400 16px/23px 'Arial', sans-serif;
+  letter-spacing: -0.1px;
 }
 .reviews {
   background-color: #f5f5f5;
   color: #445161;
-  min-height: 424px;
+  min-height: 330px;
+  padding: 50px;
+}
+.reviews h2 {
+  text-align: center;
+  color: #445161;
+  font: 400 30px/36px 'Arial', sans-serif;
+  margin-bottom: 35px;
+}
+.reviews .col1 {
+  margin-right: 30px;
+}
+.reviews .col1,
+.reviews .col2 {
+  max-width: 590px;
+  display: grid;
+  float: left;
+}
+.reviews .col1 .userPic,
+.reviews .col2 .userPic {
+  border-radius: 50%;
+  background-color: #445161;
+  width: 75px;
+  height: 75px;
+  float: left;
+  margin-right: 15px;
+}
+.reviews .col1 .review,
+.reviews .col2 .review {
+  background: url(../images/bg_review.png) no-repeat;
+  float: right;
+  max-width: 435px;
+  max-height: 121px;
+  padding: 15px 20px 15px 27px;
+}
+.reviews .col1 .review p,
+.reviews .col2 .review p {
+  color: #333333;
+  font: italic 400 14px/17px 'Arial', sans-serif;
+  margin-bottom: 15px;
+  letter-spacing: -0.4px;
+}
+.reviews .col1 .review .name,
+.reviews .col2 .review .name {
+  color: #989898;
+  font: 400 14px/18px 'Arial', sans-serif;
 }
 .buyItNow {
   color: #445161;
-  min-height: 656px;
+  padding: 50px 145px;
+}
+.buyItNow h2 {
+  color: #445161;
+  font: 400 30px/36px 'Arial', sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.buyItNow .col1,
+.buyItNow .col2,
+.buyItNow .col3 {
+  background-color: #445161;
+  width: 296.66666667px;
+  vertical-align: bottom;
+  /* вот она */
+  display: inline-block;
+}
+.buyItNow .col1 h3,
+.buyItNow .col2 h3,
+.buyItNow .col3 h3 {
+  text-align: center;
+  color: #ffffff;
+  font: 400 24px/30px 'Arial', sans-serif;
+  padding: 15px 0;
+}
+.buyItNow .col1 p,
+.buyItNow .col2 p,
+.buyItNow .col3 p {
+  color: #445162;
+  background-color: #ffffff;
+  text-align: center;
+  font: 400 40px/30px 'Arial', sans-serif;
+  padding: 18px 0;
+}
+.buyItNow .col1 ol,
+.buyItNow .col2 ol,
+.buyItNow .col3 ol {
+  color: #ffffff;
+  font: 400 14px/24px 'Arial', sans-serif;
+  margin-left: 35px;
+  margin-top: 20px;
+}
+.buyItNow .col1 button,
+.buyItNow .col2 button,
+.buyItNow .col3 button {
+  text-align: center;
+  color: #445161;
+  background-color: #ffffff;
+  font: 800 18px/18px 'Arial', sans-serif;
+  text-transform: uppercase;
+  width: 260px;
+  height: 40px;
+  margin: 20px;
+  border-radius: 7px;
+}
+.buyItNow .col2 {
+  margin: 0 45px;
 }
 footer {
   width: 1280px;
@@ -151,6 +293,29 @@ footer .contacts {
   background-color: #445161;
   color: #ffffff;
   min-height: 509px;
+  padding: 50px 250px;
+}
+footer .contacts h2 {
+  color: #ffffff;
+  text-align: center;
+  font: 400 30px/36px 'Arial', sans-serif;
+  margin-bottom: 30px;
+}
+footer .contacts .col1 {
+  max-width: 495px;
+  margin-right: 45px;
+}
+footer .contacts .col1 input {
+  display: block;
+}
+footer .contacts .col2 {
+  max-width: 235px;
+}
+footer .contacts .col1,
+footer .contacts .col2 {
+  vertical-align: top;
+  /* вот она */
+  display: inline-block;
 }
 footer .contacts p {
   font: 60px 'Socialico';
