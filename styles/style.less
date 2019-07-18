@@ -3,27 +3,13 @@
 @font-face {
     font-family: Socialico; /* Имя шрифта */
     src: url('../fonts/Socialico/Socialico-Regular.woff2'); /* Путь к файлу со шрифтом */
-   }
-
-@font-face {
-font-family: 'Arial MT';
-font-style: normal;
-font-weight: normal;
-src: local('Arial MT'), url('../fonts/ArialMT/arial-mt-std-light-586c341645fe0.woff') format('woff');
 }
 
 @font-face {
-font-family: 'Arial - Bold MT';
+font-family: 'Arial';
 font-style: normal;
 font-weight: normal;
-src: local('Arial - Bold MT'), url('../fonts/ArialMT/arial-mt-std-cond-586c3568cef79.woff') format('woff');
-}
-
-@font-face {
-font-family: 'Arial - Italic MT';
-font-style: normal;
-font-weight: normal;
-src: local('Arial - Italic MT'), url('../fonts/ArialMT/arial-mt-std-italic-586c358cbc0a5.woff') format('woff');
+src: local('Arial'), url('../fonts/arial.ttf') format('ttf');
 }
 
 @outlineTest: 1px dotted #999;
@@ -32,6 +18,9 @@ src: local('Arial - Italic MT'), url('../fonts/ArialMT/arial-mt-std-italic-586c3
 
 @paddingMain: 50px;
 @margingMain: @paddingMain;
+@marginAuto: 0 auto;
+@marginH1: 30px;
+@marginP: 20px;
 
 @colorPrimary: #445161;
 @colorSecondary: #f5f5f5;
@@ -42,7 +31,7 @@ src: local('Arial - Italic MT'), url('../fonts/ArialMT/arial-mt-std-italic-586c3
 @colorWhite: #fff;
 
 
-@fontPrimary: 'Arial MT', sans-serif;
+@fontPrimary: 'Arial', sans-serif;
 @fontPrimaryItalic: 'Arial - Italic MT', sans-serif;
 @fontPrimaryBold: 'Arial - Bold MT', sans-serif;
 @fontIcons: 'Socialico';
@@ -62,16 +51,35 @@ body {
     clear: both;
 }
 
+/* ----- mixes ----- */
+
+.colorPrimaryWhite {
+    background-color: @colorPrimary;
+        color: @colorWhite;
+}
+
+.colorSecondaryPrimary {
+    background-color: @colorSecondary;
+    color: @colorPrimary;
+}
+
+.colorPrimaryWhite {
+    background-color: @colorPrimary;
+        color: @colorWhite;
+}
+
+/* ------------------------- */
+
+
 main {
     width: @widthMain;
-    margin: 0 auto;
+    margin: @marginAuto;
 }
 
 .header {
     min-height: 323px - @paddingMain * 2;
     padding: @paddingMain;
-    background-color: @colorPrimary;
-    color: @colorWhite;
+    .colorPrimaryWhite;
     
     .col {
         width: (@widthMain - @paddingMain * 2) / 2;
@@ -97,7 +105,10 @@ main {
     }
     
     .col2 {
-        img {
+        .shape9 {
+            background-color: @colorWhite;
+            width: 469px;
+            height: 214px;
             float: right;
         }
     }
@@ -105,13 +116,37 @@ main {
 
 .about {
     color: @colorPrimary;
-    min-height: 345px;
-    
+    min-height: 345px - @paddingMain * 2;
+    padding: @paddingMain;
+
+    .col {
+        margin-right: @margingMain;
+        float: left;
+        max-width: 649px;
+        
+        h1 {
+            color: @colorPrimary;
+            font: 400 28px/28px @fontPrimary;
+            margin-bottom: @marginH1;
+        }
+
+        p {
+            color: @colorInfo;
+            font: 400 16px/22px @fontPrimary;
+            margin-bottom: @marginP;
+        }
+    }
+    .video {
+        width: 430px;
+        height: 245px;
+        float: right;
+        background-color: @colorPrimary;
+        margin-left: @margingMain;
+    }
 }
 
 .pluses {
-    background-color: @colorSecondary;
-    color: @colorPrimary;
+    .colorSecondaryPrimary;
     min-height: 317px + @margingMain * 2;
 }
 
@@ -121,8 +156,7 @@ main {
 }
 
 .reviews {
-    background-color: @colorSecondary;
-    color: @colorPrimary;
+    .colorSecondaryPrimary;
     min-height: 424px;
 }
 
@@ -134,11 +168,10 @@ main {
 
 footer {
     width: @widthMain;
-    margin: 0 auto;
+    margin: @marginAuto;
  
     .contacts {
-        background-color: @colorPrimary;
-        color: @colorWhite;
+        .colorPrimaryWhite;
         min-height: 509px;
         
         p {
@@ -150,7 +183,7 @@ footer {
     .copyright {
         color: @colorDark;
         text-align: center;
-        font: 400 12px/26px 'Arial MT';
+        font: 400 12px/26px @fontPrimary;
         letter-spacing: 0.3px;
     }
 }

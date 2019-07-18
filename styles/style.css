@@ -7,22 +7,10 @@
   /* Путь к файлу со шрифтом */
 }
 @font-face {
-  font-family: 'Arial MT';
+  font-family: 'Arial';
   font-style: normal;
   font-weight: normal;
-  src: local('Arial MT'), url('../fonts/ArialMT/arial-mt-std-light-586c341645fe0.woff') format('woff');
-}
-@font-face {
-  font-family: 'Arial - Bold MT';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Arial - Bold MT'), url('../fonts/ArialMT/arial-mt-std-cond-586c3568cef79.woff') format('woff');
-}
-@font-face {
-  font-family: 'Arial - Italic MT';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Arial - Italic MT'), url('../fonts/ArialMT/arial-mt-std-italic-586c358cbc0a5.woff') format('woff');
+  src: local('Arial'), url('../fonts/arial.ttf') format('ttf');
 }
 * {
   margin: 0;
@@ -31,11 +19,25 @@
 }
 html,
 body {
-  font-family: 'Arial MT', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .clearFix {
   clear: both;
 }
+/* ----- mixes ----- */
+.colorPrimaryWhite {
+  background-color: #445161;
+  color: #ffffff;
+}
+.colorSecondaryPrimary {
+  background-color: #f5f5f5;
+  color: #445161;
+}
+.colorPrimaryWhite {
+  background-color: #445161;
+  color: #ffffff;
+}
+/* ------------------------- */
 main {
   width: 1280px;
   margin: 0 auto;
@@ -51,24 +53,50 @@ main {
   float: left;
 }
 .header .col1 .productName {
-  font: 400 60px/44px 'Arial MT', sans-serif;
+  font: 400 60px/44px 'Arial', sans-serif;
 }
 .header .col1 ul {
   margin-top: 50px;
   margin-left: 36px;
   min-width: 430px;
-  font: 400 20px/15px 'Arial MT', sans-serif;
+  font: 400 20px/15px 'Arial', sans-serif;
   list-style-image: url('../images/check_icon.png');
 }
 .header .col1 ul li:not(:last-child) {
   margin-bottom: 15px;
 }
-.header .col2 img {
+.header .col2 .shape9 {
+  background-color: #ffffff;
+  width: 469px;
+  height: 214px;
   float: right;
 }
 .about {
   color: #445161;
-  min-height: 345px;
+  min-height: 245px;
+  padding: 50px;
+}
+.about .col {
+  margin-right: 50px;
+  float: left;
+  max-width: 649px;
+}
+.about .col h1 {
+  color: #445161;
+  font: 400 28px/28px 'Arial', sans-serif;
+  margin-bottom: 30px;
+}
+.about .col p {
+  color: #333333;
+  font: 400 16px/22px 'Arial', sans-serif;
+  margin-bottom: 20px;
+}
+.about .video {
+  width: 430px;
+  height: 245px;
+  float: right;
+  background-color: #445161;
+  margin-left: 50px;
 }
 .pluses {
   background-color: #f5f5f5;
@@ -103,6 +131,6 @@ footer .contacts p {
 footer .copyright {
   color: #445162;
   text-align: center;
-  font: 400 12px/26px 'Arial MT';
+  font: 400 12px/26px 'Arial', sans-serif;
   letter-spacing: 0.3px;
 }
