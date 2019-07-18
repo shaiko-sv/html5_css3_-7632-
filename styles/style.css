@@ -54,9 +54,9 @@ main {
 }
 .header .col1 .productName {
   font: 400 60px/44px 'Arial', sans-serif;
+  margin-bottom: 50px;
 }
 .header .col1 ul {
-  margin-top: 50px;
   margin-left: 36px;
   min-width: 430px;
   font: 400 20px/15px 'Arial', sans-serif;
@@ -82,7 +82,6 @@ main {
   max-width: 649px;
 }
 .about .col h2 {
-  color: #445161;
   font: 400 28px/28px 'Arial', sans-serif;
   margin-bottom: 30px;
 }
@@ -101,7 +100,35 @@ main {
 .pluses {
   background-color: #f5f5f5;
   color: #445161;
-  min-height: 417px;
+  padding: 50px;
+  min-height: 317px;
+}
+.pluses h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.pluses .col1,
+.pluses .col2 {
+  max-width: 578.5px;
+  margin-right: 23px;
+  float: left;
+}
+.pluses article {
+  margin-bottom: 35px;
+  display: flex;
+  max-height: 63px;
+}
+.pluses article .plus {
+  float: left;
+  width: 40px;
+}
+.pluses article div {
+  overflow: hidden;
+  /* Обрезаем содержимое */
+  float: left;
+  width: 526px;
+  color: #333333;
+  font: 400 16px/22px 'Arial', sans-serif;
 }
 .screenhots {
   color: #445161;
