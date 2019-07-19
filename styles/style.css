@@ -113,19 +113,19 @@ main {
   margin-right: 23px;
   float: left;
 }
-.pluses article {
+.pluses .article {
   margin-bottom: 35px;
   display: flex;
   max-height: 63px;
 }
-.pluses article .plus {
+.pluses .article .plus {
   float: left;
   width: 40px;
 }
-.pluses article .plus img {
+.pluses .article .plus img {
   cursor: pointer;
 }
-.pluses article div {
+.pluses .article div {
   overflow: hidden;
   /* Обрезаем содержимое */
   float: left;
@@ -218,7 +218,7 @@ main {
   background: url(../images/bg_review.png) no-repeat;
   float: right;
   max-width: 435px;
-  max-height: 121px;
+  min-height: 121px;
   padding: 15px 20px 15px 27px;
 }
 .reviews .col1 .review p,
