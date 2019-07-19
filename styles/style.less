@@ -12,7 +12,7 @@ font-weight: normal;
 src: local('Arial'), url('../fonts/arial.ttf') format('ttf');
 }
 
-@outlineTest: 1px dotted #999;
+@outlineTest: 0 dotted #999;
 
 @widthMain: 1280px;
 
@@ -40,6 +40,8 @@ src: local('Arial'), url('../fonts/arial.ttf') format('ttf');
 @fontPrimaryItalic: 'Arial - Italic MT', sans-serif;
 @fontPrimaryBold: 'Arial - Bold MT', sans-serif;
 @fontIcons: 'Socialico';
+
+@borderRadius: 5px;
 
 * {
     margin: 0;
@@ -175,6 +177,10 @@ main {
         .plus {
             float: left;
             width: 40px;
+            
+            img {
+                cursor: pointer;
+            }
         }
         
         div {
@@ -214,6 +220,10 @@ main {
             div {
                 float: left;
                 max-width: 359px;
+                
+                img {
+                    cursor: pointer;
+                }
             }
             
             .text {
@@ -264,6 +274,7 @@ main {
             height: 75px;
             float: left;
             margin-right: @marginsPShots;
+            cursor: pointer;
         }
         
         .review {
@@ -339,7 +350,14 @@ main {
             width: 260px;
             height: 40px;
             margin: @marginP;
-            border-radius: 7px;
+            border-radius: @borderRadius;
+            cursor: pointer;
+            border: 0;
+            
+            &:hover {
+                    background-color: @colorSuccess;
+                    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 2px;
+            }
         }
     }
     
@@ -354,8 +372,9 @@ footer {
  
     .contacts {
         .colorPrimaryWhite;
-        min-height: 509px;
+        min-height: 509px - @paddingMain * 2;
         padding: @paddingMain @paddingMain * 5;
+
         
         h2 {
             color: @colorWhite;
@@ -365,30 +384,96 @@ footer {
         }
         
         .col1 {
-            max-width: 495px;
-            margin-right: @marginBuyItNow;
+            max-width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow) * .6;
+            margin-right: @marginBuyItNow - 1px;
+            
+            form {
+                width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow - 7px) * .6;
+            }
+            input,
+            textarea {
+                display: block;
+                width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow - 7px) * .6 - (@paddingMain / 5) * 2;;
+            }
             
             input {
-                display: block;
+                height: 40px - (@paddingMain / 2);
+            }
+            
+            textarea {
+                height: 170px - (@paddingMain / 2);
             }
         }
         
         .col2 {
-            max-width: 235px;
+            max-width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow - 7px) * .4 - (@paddingMain / 5) * 2;
         }
         
         .col1,
         .col2 {
-        vertical-align: top; /* вот она */
-        display:inline-block;
+            vertical-align: top; /* вот она */
+            display:inline-block;
+
+            input,
+            textarea {
+                border: 0;
+                margin-bottom: @marginP;
+                border-radius: @borderRadius;               
+                color: @colorDark;
+                font: 400 16px/24px @fontPrimary;
+                padding: (@paddingMain / 4) (@paddingMain / 5);
+                background-color: @colorWhite;
+                
+                &[name="name"] {
+                    text-transform: capitalize;
+                }
+
+                &[type="submit"] {
+                    width: 140px - (@paddingMain / 5) * 2;
+                    height: 40px;
+                    margin: @marginAuto;
+                    color: @colorDark;
+                    font:600 16px/24px "Arial";
+                    text-transform: uppercase;
+                    padding: 0;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background-color: @colorSuccess;
+                        box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 2px;
+                    }
+                }
+            }
+            ul {
+                list-style-type: none;
+                
+                li {
+                    height: 40px;
+                }
+                li>img {
+                        vertical-align: middle;
+                }
+                li>p {
+                        vertical-align: middle
+                }
+                
+            }
+            p {
+                font: 400 16px/24px @fontPrimary;
+                display: inline-block;
+                padding-left: @marginP / 4;
+            }
             
-        }
-        p {
-            font: 60px @fontIcons;
-            
+            a {
+                text-decoration: none;
+                color: @colorWhite;
+                
+            }
+            span {
+                font: 56px @fontIcons;
+            }
         }
     }
-    
     .copyright {
         color: @colorDark;
         text-align: center;

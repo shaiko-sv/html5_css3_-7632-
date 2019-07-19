@@ -15,7 +15,7 @@
 * {
   margin: 0;
   padding: 0;
-  outline: 1px dotted #999999;
+  outline: 0 dotted #999999;
 }
 html,
 body {
@@ -122,6 +122,9 @@ main {
   float: left;
   width: 40px;
 }
+.pluses article .plus img {
+  cursor: pointer;
+}
 .pluses article div {
   overflow: hidden;
   /* Обрезаем содержимое */
@@ -158,6 +161,10 @@ main {
 .screenhots .col2 section div {
   float: left;
   max-width: 359px;
+}
+.screenhots .col1 section div img,
+.screenhots .col2 section div img {
+  cursor: pointer;
 }
 .screenhots .col1 section .text,
 .screenhots .col2 section .text {
@@ -204,6 +211,7 @@ main {
   height: 75px;
   float: left;
   margin-right: 15px;
+  cursor: pointer;
 }
 .reviews .col1 .review,
 .reviews .col2 .review {
@@ -280,7 +288,15 @@ main {
   width: 260px;
   height: 40px;
   margin: 20px;
-  border-radius: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0;
+}
+.buyItNow .col1 button:hover,
+.buyItNow .col2 button:hover,
+.buyItNow .col3 button:hover {
+  background-color: #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 2px;
 }
 .buyItNow .col2 {
   margin: 0 45px;
@@ -292,7 +308,7 @@ footer {
 footer .contacts {
   background-color: #445161;
   color: #ffffff;
-  min-height: 509px;
+  min-height: 409px;
   padding: 50px 250px;
 }
 footer .contacts h2 {
@@ -303,13 +319,24 @@ footer .contacts h2 {
 }
 footer .contacts .col1 {
   max-width: 495px;
-  margin-right: 45px;
+  margin-right: 44px;
+}
+footer .contacts .col1 form {
+  width: 490.8px;
+}
+footer .contacts .col1 input,
+footer .contacts .col1 textarea {
+  display: block;
+  width: 470.8px;
 }
 footer .contacts .col1 input {
-  display: block;
+  height: 15px;
+}
+footer .contacts .col1 textarea {
+  height: 145px;
 }
 footer .contacts .col2 {
-  max-width: 235px;
+  max-width: 307.2px;
 }
 footer .contacts .col1,
 footer .contacts .col2 {
@@ -317,8 +344,74 @@ footer .contacts .col2 {
   /* вот она */
   display: inline-block;
 }
-footer .contacts p {
-  font: 60px 'Socialico';
+footer .contacts .col1 input,
+footer .contacts .col2 input,
+footer .contacts .col1 textarea,
+footer .contacts .col2 textarea {
+  border: 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: #445162;
+  font: 400 16px/24px 'Arial', sans-serif;
+  padding: 12.5px 10px;
+  background-color: #ffffff;
+}
+footer .contacts .col1 input[name="name"],
+footer .contacts .col2 input[name="name"],
+footer .contacts .col1 textarea[name="name"],
+footer .contacts .col2 textarea[name="name"] {
+  text-transform: capitalize;
+}
+footer .contacts .col1 input[type="submit"],
+footer .contacts .col2 input[type="submit"],
+footer .contacts .col1 textarea[type="submit"],
+footer .contacts .col2 textarea[type="submit"] {
+  width: 120px;
+  height: 40px;
+  margin: 0 auto;
+  color: #445162;
+  font: 600 16px/24px "Arial";
+  text-transform: uppercase;
+  padding: 0;
+  cursor: pointer;
+}
+footer .contacts .col1 input[type="submit"]:hover,
+footer .contacts .col2 input[type="submit"]:hover,
+footer .contacts .col1 textarea[type="submit"]:hover,
+footer .contacts .col2 textarea[type="submit"]:hover {
+  background-color: #ebebeb;
+  box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 2px;
+}
+footer .contacts .col1 ul,
+footer .contacts .col2 ul {
+  list-style-type: none;
+}
+footer .contacts .col1 ul li,
+footer .contacts .col2 ul li {
+  height: 40px;
+}
+footer .contacts .col1 ul li > img,
+footer .contacts .col2 ul li > img {
+  vertical-align: middle;
+}
+footer .contacts .col1 ul li > p,
+footer .contacts .col2 ul li > p {
+  vertical-align: middle;
+}
+footer .contacts .col1 p,
+footer .contacts .col2 p {
+  font: 400 16px/24px 'Arial', sans-serif;
+  display: inline-block;
+  padding-left: 5px;
+}
+footer .contacts .col1 a,
+footer .contacts .col2 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+footer .contacts .col1 span,
+footer .contacts .col2 span {
+  font: 56px 'Socialico';
 }
 footer .copyright {
   color: #445162;
