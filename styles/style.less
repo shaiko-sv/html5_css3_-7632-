@@ -1,0 +1,483 @@
+/* font: [font-style||font-variant||font-weight] font-size [/line-height] font-family | inherit */
+
+@font-face {
+    font-family: Socialico; /* Имя шрифта */
+    src: url('../fonts/Socialico/Socialico-Regular.woff2'); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+font-family: 'Arial';
+font-style: normal;
+font-weight: normal;
+src: local('Arial'), url('../fonts/arial.ttf') format('ttf');
+}
+
+@outlineTest: 0 dotted #999;
+
+@widthMain: 1280px;
+
+@paddingMain: 50px;
+@margingMain: @paddingMain;
+@marginAuto: 0 auto;
+@marginH1: 50px;
+@marginH2: 30px;
+@marginP: 20px;
+@marginArticle: 35px;
+@marginColPluses: 23px;
+@marginsPShots: 15px;
+@marginBuyItNow: 45px;
+
+@colorPrimary: #445161;
+@colorSecondary: #f5f5f5;
+@colorSuccess: #ebebeb;
+@colorInfo: #333;
+@colorLight: #989898;
+@colorDark: #445162;
+@colorWhite: #fff;
+
+
+@fontPrimary: 'Arial', sans-serif;
+@fontPrimaryItalic: 'Arial - Italic MT', sans-serif;
+@fontPrimaryBold: 'Arial - Bold MT', sans-serif;
+@fontIcons: 'Socialico';
+
+@borderRadius: 5px;
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: @outlineTest;
+}
+
+html,
+body {
+    font-family: @fontPrimary;
+}
+
+.clearFix {
+    clear: both;
+}
+
+/* ----- mixes ----- */
+
+.colorPrimaryWhite {
+    background-color: @colorPrimary;
+    color: @colorWhite;
+}
+
+.colorSecondaryPrimary {
+    background-color: @colorSecondary;
+    color: @colorPrimary;
+}
+
+.colorPrimaryWhite {
+    background-color: @colorPrimary;
+        color: @colorWhite;
+}
+
+/* ------------------------- */
+
+
+main {
+    width: @widthMain;
+    margin: @marginAuto;
+}
+
+.header {
+    min-height: 323px - @paddingMain * 2;
+    padding: @paddingMain;
+    .colorPrimaryWhite;
+    
+    .col {
+        width: (@widthMain - @paddingMain * 2) / 2;
+        float: left;
+    }
+    
+    .col1 {
+        .productName {
+            font: 400 60px/44px @fontPrimary;
+            margin-bottom: @marginH1;
+        }
+    
+        ul {
+            margin-left: 36px;
+            min-width: 430px;
+            font: 400 20px/15px @fontPrimary;
+            list-style-image: url('../images/check_icon.png');
+        
+            li:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .col2 {
+        .shape9 {
+            background-color: @colorWhite;
+            width: 469px;
+            height: 214px;
+            float: right;
+        }
+    }
+}
+
+.about {
+    color: @colorPrimary;
+    min-height: 345px - @paddingMain * 2;
+    padding: @paddingMain;
+
+    .col {
+        margin-right: @margingMain;
+        float: left;
+        max-width: 649px;
+        
+        h2 {
+            font: 400 28px/28px @fontPrimary;
+            margin-bottom: @marginH2;
+        }
+
+        p {
+            color: @colorInfo;
+            font: 400 16px/22px @fontPrimary;
+            margin-bottom: @marginP;
+        }
+    }
+    
+    .video {
+        width: 430px;
+        height: 245px;
+        float: right;
+        background-color: @colorPrimary;
+        margin-left: @margingMain;
+    }
+}
+
+.pluses {
+    .colorSecondaryPrimary;
+    padding: @paddingMain;
+    min-height: 317px;
+    
+    h2 {
+        text-align: center;
+        margin-bottom: @marginH2;
+    }
+
+    .col1,
+    .col2 {
+        max-width: (@widthMain - @paddingMain * 2 - @marginColPluses) / 2;
+        margin-right: @marginColPluses;
+        float: left;
+    }
+    
+    .article {
+        margin-bottom: @marginArticle;
+        display: flex;
+        max-height: 63px;
+        
+        .plus {
+            float: left;
+            width: 40px;
+            
+            img {
+                cursor: pointer;
+            }
+        }
+        
+        div {
+            overflow: hidden; /* Обрезаем содержимое */
+            float: left;
+            width: 526px;
+            color: @colorInfo;
+            font: 400 16px/22px @fontPrimary;
+            letter-spacing: -.1px;
+        }
+    }
+}
+
+.screenhots {
+    color: @colorPrimary;
+    min-height: 400px;
+    padding: @paddingMain;
+    
+    h2 {
+        text-align: center;
+        color: @colorPrimary;
+        font: 400 30px/36px @fontPrimary;
+        margin-bottom: @marginH2 + 5px;
+    }
+    
+    .col1,
+    .col2 {
+        max-width: (@widthMain - @paddingMain * 2) / 2;
+        float: left;
+        overflow: hidden;
+        
+        section {
+            display: flex;
+            margin-bottom: 30px;
+            max-height: 150px;
+            
+            div {
+                float: left;
+                max-width: 359px;
+                
+                img {
+                    cursor: pointer;
+                }
+            }
+            
+            .text {
+                margin: 0 @marginsPShots;
+                
+                h3 {
+                    color: @colorPrimary;
+                    font: 400 24px/24px @fontPrimary;
+                    margin-bottom: @marginsPShots;
+                }
+
+                p {
+                    color: @colorInfo;
+                    font: 400 16px/23px @fontPrimary;
+                    letter-spacing: -.1px;
+                }
+            }    
+        }
+    }
+}
+
+.reviews {
+    .colorSecondaryPrimary;
+    min-height: 330px;
+    padding: @paddingMain;
+    
+    h2 {
+        text-align: center;
+        color: @colorPrimary;
+        font: 400 30px/36px @fontPrimary;
+        margin-bottom: @marginH2 + 5px;
+    }
+
+    .col1 {
+        margin-right: @marginH2;
+    }
+    
+    .col1,
+    .col2 {
+        max-width: (@widthMain - @paddingMain * 2) / 2;
+        display: grid;
+        float: left;
+        
+        .userPic {
+            border-radius: 50%;
+            background-color: @colorPrimary;
+            width: 75px;
+            height: 75px;
+            float: left;
+            margin-right: @marginsPShots;
+            cursor: pointer;
+        }
+        
+        .review {
+            background: url(../images/bg_review.png) no-repeat;
+            float: right;
+            max-width: 435px;
+            min-height: 121px;
+            padding: @marginsPShots 20px @marginsPShots 27px;
+            
+            p {
+                color: @colorInfo;
+                font: italic 400 14px/17px @fontPrimary;
+                margin-bottom: @marginsPShots;
+                letter-spacing: -.4px;
+            }
+            
+            .name {
+                color: @colorLight;
+                font: 400 14px/18px @fontPrimary;
+            }
+        }
+    }
+    
+}
+
+.buyItNow {
+    color: @colorPrimary;
+    padding: @paddingMain (@paddingMain * 3 - 5px);
+    
+    h2 {
+        color: @colorPrimary;
+        font: 400 30px/36px @fontPrimary;
+        text-align: center;
+        margin-bottom: @marginH2;
+    }
+    
+    .col1,
+    .col2,
+    .col3 {
+        background-color: @colorPrimary;
+        width: (@widthMain - (@paddingMain * 3) * 2 - @marginBuyItNow * 2) / 3;
+        vertical-align:bottom; /* вот она */
+        display:inline-block;
+        
+        h3 {
+            text-align: center;
+            color: @colorWhite;
+            font: 400 24px/30px @fontPrimary;
+            padding: @marginsPShots 0;
+        }
+        
+        p {
+            color: @colorDark;
+            background-color: @colorWhite;
+            text-align: center;
+            font: 400 40px/30px @fontPrimary;
+            padding: @marginP - 2px 0;
+        }
+        
+        ol {
+            color: @colorWhite;
+            font: 400 14px/24px @fontPrimary;
+            margin-left: @marginArticle;
+            margin-top: @marginP;
+        }
+        
+        button {
+            text-align: center;
+            color: @colorPrimary;
+            background-color: @colorWhite;
+            font: 800 18px/18px @fontPrimary;
+            text-transform: uppercase;
+            width: 260px;
+            height: 40px;
+            margin: @marginP;
+            border-radius: @borderRadius;
+            cursor: pointer;
+            border: 0;
+            
+            &:hover {
+                    background-color: @colorSuccess;
+                    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 2px;
+            }
+        }
+    }
+    
+    .col2 {
+        margin: 0 @marginBuyItNow;
+    }
+}
+
+footer {
+    width: @widthMain;
+    margin: @marginAuto;
+ 
+    .contacts {
+        .colorPrimaryWhite;
+        min-height: 509px - @paddingMain * 2;
+        padding: @paddingMain @paddingMain * 5;
+
+        
+        h2 {
+            color: @colorWhite;
+            text-align: center;
+            font: 400 30px/36px @fontPrimary;
+            margin-bottom: @marginH2;  
+        }
+        
+        .col1 {
+            max-width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow) * .6;
+            margin-right: @marginBuyItNow - 1px;
+            
+            form {
+                width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow - 7px) * .6;
+            }
+            input,
+            textarea {
+                display: block;
+                width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow - 7px) * .6 - (@paddingMain / 5) * 2;;
+            }
+            
+            input {
+                height: 40px - (@paddingMain / 2);
+            }
+            
+            textarea {
+                height: 170px - (@paddingMain / 2);
+            }
+        }
+        
+        .col2 {
+            max-width: (@widthMain - @paddingMain * 5 * 2 + @marginBuyItNow - 7px) * .4 - (@paddingMain / 5) * 2;
+        }
+        
+        .col1,
+        .col2 {
+            vertical-align: top; /* вот она */
+            display:inline-block;
+
+            input,
+            textarea {
+                border: 0;
+                margin-bottom: @marginP;
+                border-radius: @borderRadius;               
+                color: @colorDark;
+                font: 400 16px/24px @fontPrimary;
+                padding: (@paddingMain / 4) (@paddingMain / 5);
+                background-color: @colorWhite;
+                
+                &[name="name"] {
+                    text-transform: capitalize;
+                }
+
+                &[type="submit"] {
+                    width: 140px - (@paddingMain / 5) * 2;
+                    height: 40px;
+                    margin: @marginAuto;
+                    color: @colorDark;
+                    font:600 16px/24px "Arial";
+                    text-transform: uppercase;
+                    padding: 0;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background-color: @colorSuccess;
+                        box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 2px;
+                    }
+                }
+            }
+            ul {
+                list-style-type: none;
+                
+                li {
+                    height: 40px;
+                }
+                li>img {
+                        vertical-align: middle;
+                }
+                li>p {
+                        vertical-align: middle
+                }
+                
+            }
+            p {
+                font: 400 16px/24px @fontPrimary;
+                display: inline-block;
+                padding-left: @marginP / 4;
+            }
+            
+            a {
+                text-decoration: none;
+                color: @colorWhite;
+                
+            }
+            span {
+                font: 56px @fontIcons;
+            }
+        }
+    }
+    .copyright {
+        color: @colorDark;
+        text-align: center;
+        font: 400 12px/26px @fontPrimary;
+        letter-spacing: 0.3px;
+    }
+}
