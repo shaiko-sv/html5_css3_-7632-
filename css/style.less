@@ -1,0 +1,125 @@
+@colorWhite: #fff;
+@colorBackground: #1f1f1f;
+@colorHR: #353535;
+@colorText: #8e8e8e;
+@colorInfo: #d30000;
+@fontPrimary: #d30000;
+@margin1: 20px;
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    font: 400 14px/16px 'Arial';
+}
+.clearFix {
+    content: '';
+    display: block;
+    clear: both;
+}
+.flexMode {
+    display: flex;
+    flex-wrap: wrap;
+}
+video {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.container {
+    width: 100%;
+}
+.row {
+}
+.onVideo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    max-width: 50%;
+    min-height: 25vh;
+    background-color: darkgray;
+    opacity: 1;
+    padding: 20px;
+    background-color: @colorBackground;
+    border-radius: 5px;
+}
+fieldset {
+    border: 0 none;
+}
+legend,
+label {
+    color: @colorWhite;
+    opacity: 1;
+    font-family: 'Arial-Narrow', sans-serif;
+}
+legend {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-left: -5px;
+}
+span {
+    color: @fontPrimary;
+}
+hr {
+    border: none; /* Убираем границу для браузера Firefox */
+    color: @colorHR; /* Цвет линии для остальных браузеров */
+    background-color: @colorHR; /* Цвет линии для браузера Firefox и Opera */
+    height: 1px; /* Толщина линии */
+    margin: 5px -15px;
+}
+p {
+    color: @colorText;
+    text-align: justify;
+    margin: 15px 0;
+    clear: both;
+}
+legend {
+    text-transform: uppercase;
+}
+input,
+textarea {
+    margin: 12px 0 22px;
+    border-radius: 5px;
+    background-image: repeating-linear-gradient(45deg, #353535, #2d2d2d .5%, #353535 2%);
+    border-left: 3px ridge #282828;
+    border-top: 3px ridge #282828;
+    border-right: 3px inset #282828;
+    border-bottom: 3px inset #282828;
+}
+input {
+    width: 60%;
+    height: 30px;
+    &[type="submit"] {
+        width: 20%;
+        margin: 0;
+        color: @colorWhite;
+        background-image: linear-gradient(to bottom, #a7a7a7, #848484);
+        border: none;
+    }
+}
+.fieldSubmit {
+    text-align: right;
+}
+textarea {
+    height: 175px;
+    resize: none;
+}
+main {
+    position: relative;
+    min-height: 50vh;
+    background-color: slategray;
+}
+.formArea {
+    display: flex;
+    justify-content: center;
+}
